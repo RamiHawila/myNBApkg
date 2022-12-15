@@ -1,5 +1,8 @@
 library(usethis)
 library(devtools)
+library(roxygen2)
+library(testthat)
+
 use_git()
 use_github("RamiHawila/myNBApkg")
 
