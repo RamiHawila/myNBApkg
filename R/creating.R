@@ -4,7 +4,8 @@ library(roxygen2)
 library(testthat)
 
 use_git()
-use_github("RamiHawila/myNBApkg")
+use_github("RamiHawila/myNBApkg2")
+
 
 
 check()
