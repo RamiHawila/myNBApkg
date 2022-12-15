@@ -1,0 +1,8 @@
+library(usethis)
+library(devtools)
+use_git()
+use_github()
+check()
+use_mit_license("Rami Hawila")
+check()
+use_r("functions")
