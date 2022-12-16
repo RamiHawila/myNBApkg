@@ -245,7 +245,8 @@ modelling = function(response = "FT.",data=DATASET){
       gtsummary::bold_labels() %>%
       gtsummary::italicize_levels() %>%
       gtsummary::as_gt() %>%
-      gt::tab_header(title = "Linear regression summary modelling Minutes Played per game")
+      gt::tab_header(title = "Linear regression summary modelling Minutes Played per game") %>%
+      as_gt()
   }
 }
 
