@@ -2,8 +2,7 @@ Package: myNBApkg
 Title: NBA Seasonal Analysis Package
 Version: 1.0.0
 Authors@R: 
-    person("Rami", "Hawila", , "ramihawila6@gmail.com", role = c("aut")
-           )
+    person("Rami", "Hawila", "ramihawila6@gmail.com", role = c("aut"))
 Description: This package was designed as part of a final project for Biostatistical Computing with the goal of assisting 
 in performing computations of summary statistics, illustrations, and models to better understand NBA seasonal data.
 License: MIT + file LICENSE
