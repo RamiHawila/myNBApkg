@@ -63,7 +63,7 @@ plot_basic_stats(measure="PTS",data=DATASET)
 ### Modelling of Free Throw Percentage and Minutes Played
 We will use the function below to model the free throw success rate and minutes played based on the 2022-2023 NBA season. This function produces a table that summarizes the linear regression fit. Based on the results from the first table, we can see that field goals have a significantly negative impact on the free throw rates, where as effective field goals percentage and point scored have a significantly positive impact on the free throw rates. Based on the results from the second table, the position played  in addition to age, personal fouls, and points scored had significant positive impact on the number of minutes played. 
 
-```{r}
+```{r, echo = FALSE}
 modelling(response = "FT.",data=DATASET)
 modelling(response = "MP",data=DATASET)
 ```
