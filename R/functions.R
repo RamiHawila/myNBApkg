@@ -233,9 +233,9 @@ modelling = function(response = "FT.",data=DATASET){
     gtsummary::tbl_regression(fit_FT) %>%
       gtsummary::bold_p(t = 0.05) %>%
       gtsummary::bold_labels() %>%
-      gtsummary::italicize_levels() %>%
-      gt::tab_header(title = "Linear regression summary modelling Free Throw Percentage per game") %>%
-      gtsummary::as_gt()
+      gtsummary::italicize_levels()  %>%
+      gtsummary::as_gt()%>%
+      gt::tab_header(title = "Linear regression summary modelling Free Throw Percentage per game")
 
   }
   else if(response =="MP"){
@@ -244,8 +244,8 @@ modelling = function(response = "FT.",data=DATASET){
       gtsummary::bold_p(t = 0.05) %>%
       gtsummary::bold_labels() %>%
       gtsummary::italicize_levels() %>%
-      gt::tab_header(title = "Linear regression summary modelling Minutes Played per game") %>%
-      gtsummary::as_gt()
+      gtsummary::as_gt() %>%
+      gt::tab_header(title = "Linear regression summary modelling Minutes Played per game")
   }
 }
 
