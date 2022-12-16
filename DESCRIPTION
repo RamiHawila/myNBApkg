@@ -1,10 +1,11 @@
 Package: myNBApkg
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: NBA Seasonal Analysis Package
+Version: 1.0.0
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    person("Rami", "Hawila", , "ramihawila6@gmail.com", role = c("aut")
+           )
+Description: This package was designed as part of a final project for Biostatistical Computing with the goal of assisting 
+in performing computations of summary statistics, illustrations, and models to better understand NBA seasonal data.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
