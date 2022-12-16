@@ -1,0 +1,69 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# myNBApkg
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+## Overview
+This package was designed as part of a final project for Biostatistical Computing with the goal of assisting in performing computations of summary statistics, illustrations, and models to better understand NBA seasonal data. 
+
+## Installation
+
+You can install the development version of myNBApkg from [GitHub](https://github.com/RamiHawila/myNBApkg) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("RamiHawila/myNBApkg")
+```
+
+## Load the package
+```{r}
+library(myNBApkg)
+```
+
+## Example
+
+This is a basic example which will illustrate the usage of the different available functions.
+
+
+
+### Player-level exploration
+We will use the functions below to describe the performance of Stephen Curry based on the 2022-2023 NBA season. The first table demonstrates a number of Stephen's statistics. The true shooting percentage, free throw rate, assists, and turnover rates are also demonstrated using the functions. 
+
+```{r}
+player_basic_stats(player="Stephen Curry", data=DATASET)
+true_shooting_percentage(player="Stephen Curry", data=DATASET)
+free_throw_rate(player="Stephen Curry", data=DATASET)
+basic_stats_rate(player="Stephen Curry", data=DATASET)
+```
+
+### Position-level exploration
+We will use the functions below to describe the characteristics of the Point Guard position based on the 2022-2023 NBA season. The first table demonstrates a number of the statistics associated with point guards including field goals, rebounds, assists, etc. In the second table, the top 5 point guards in terms of scoring points are shown. A barplot is presented comparing the Points scored for different positions.  
+
+```{r}
+position_stats(position = "Point Guard", data = DATASET)
+position_best(position = "Point Guard", measure = "PTS", topn = 5,data = DATASET)
+plot_basic_stats(measure="PTS",data=DATASET)
+```
+
+### Modelling of Free Throw Percentage and Minutes Played
+We will use the function below to model the free throw success rate and minutes played based on the 2022-2023 NBA season. This function produces a table that summarizes the linear regression fit. Based on the results from the first table, we can see that field goals have a significantly negative impact on the free throw rates, where as effective field goals percentage and point scored have a significantly positive impact on the free throw rates. Based on the results from the second table, the position played  in addition to age, personal fouls, and points scored had significant positive impact on the number of minutes played. 
+
+```{r}
+modelling(response = "FT.",data=DATASET)
+modelling(response = "MP",data=DATASET)
+```
