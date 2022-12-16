@@ -18,38 +18,52 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of myNBApkg is to ...
+## Overview
+This package was designed as part of a final project for Biostatistical Computing with the goal of assisting in performing computations of summary statistics, illustrations, and models to better understand NBA seasonal data. 
 
 ## Installation
 
-You can install the development version of myNBApkg from [GitHub](https://github.com/) with:
+You can install the development version of myNBApkg from [GitHub](https://github.com/RamiHawila/myNBApkg) with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("RamiHawila/myNBApkg")
 ```
 
+## Load the package
+```{r}
+library(myNBApkg)
+```
+
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which will illustrate the usage of the different available functions.
 
-```{r example}
-library(myNBApkg)
-## basic example code
+
+
+### Player-level exploration
+We will use the functions below to describe the performance of Stephen Curry based on the 2022-2023 NBA season. The first table demonstrates a number of Stephen's statistics. The true shooting percentage, free throw rate, assists, and turnover rates are also demonstrated using the functions. 
+
+```{r}
+player_basic_stats(player="Stephen Curry", data=DATASET)
+true_shooting_percentage(player="Stephen Curry", data=DATASET)
+free_throw_rate(player="Stephen Curry", data=DATASET)
+basic_stats_rate(player="Stephen Curry", data=DATASET)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+### Position-level exploration
+We will use the functions below to describe the characteristics of the Point Guard position based on the 2022-2023 NBA season. The first table demonstrates a number of the statistics associated with point guards including field goals, rebounds, assists, etc. In the second table, the top 5 point guards in terms of scoring points are shown. A barplot is presented comparing the Points scored for different positions.  
 
-```{r cars}
-summary(cars)
+```{r}
+position_stats(position = "Point Guard", data = DATASET)
+position_best(position = "Point Guard", measure = "PTS", topn = 5,data = DATASET)
+plot_basic_stats(measure="PTS",data=DATASET)
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
+### Modelling of Free Throw Percentage and Minutes Played
+We will use the function below to model the free throw success rate and minutes played based on the 2022-2023 NBA season. This function produces a table that summarizes the linear regression fit. Based on the results from the first table, we can see that field goals have a significantly negative impact on the free throw rates, where as effective field goals percentage and point scored have a significantly positive impact on the free throw rates. Based on the results from the second table, the position played  in addition to age, personal fouls, and points scored had significant positive impact on the number of minutes played. 
 
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
+```{r, echo = FALSE,warning=FALSE, message=FALSE}
+modelling(response = "FT.",data=DATASET)
+modelling(response = "MP",data=DATASET)
 ```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
